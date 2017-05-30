@@ -5,6 +5,9 @@ import exercise3.TriCater;
 
 
 public class test {
+  @Rule
+  public final ExpectedSystemExit exit = ExpectedSystemExit.none();
+
   @Test
   public void triangleTest1() {
     assertEquals(TriCater.tri(5), 15);
@@ -16,13 +19,10 @@ public class test {
   }
   @Test
   public void triangleTest3() {
-    try{
-        TriCater.tri(-5);
-        fail("Should have thrown an exception");
-    } catch(Exception e) {
-      assertEquals(e.getCode(), 2);
-    }
+    exit.expectSystemExit(2);
+    TriCater.tri(-5);
   }
+
   @Test
   public void lazyTest1() {
     assertEquals(TriCater.lazy(5), 16);
@@ -33,11 +33,7 @@ public class test {
   }
   @Test
   public void lazyTest3() {
-    try {
-      TriCater.lazy(-5);
-    } catch(Exception e) {
-      assertEquals(e.getCode(), 2);
-    }
-
+    exit.expectSystemExit(2);
+    TriCater.lazy(-5);
   }
 }

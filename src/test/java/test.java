@@ -3,11 +3,7 @@ import static org.junit.Assert.*;
 
 import exercise3.TriCater;
 
-
 public class test {
-  @Rule
-  public final ExpectedSystemExit exit = ExpectedSystemExit.none();
-
   @Test
   public void triangleTest1() {
     assertEquals(TriCater.tri(5), 15);
@@ -19,8 +15,7 @@ public class test {
   }
   @Test
   public void triangleTest3() {
-    exit.expectSystemExit(2);
-    TriCater.tri(-5);
+    assertEquals(TriCater.tri(1), 1);
   }
 
   @Test
@@ -33,7 +28,6 @@ public class test {
   }
   @Test
   public void lazyTest3() {
-    exit.expectSystemExit(2);
-    TriCater.lazy(-5);
+    assertEquals(TriCater.lazy(1), 2);
   }
 }

@@ -41,7 +41,7 @@ public class TriCater
       return inputNum;
 
     else
-      return inputNum + lazy(inputNum - 1);
+      return inputNum + tri(inputNum - 1);
   }
 
   public static int lazy(int inputNum)
@@ -57,6 +57,6 @@ public class TriCater
       return 1;
 
     else
-      return inputNum + tri(inputNum - 1);
+      return inputNum + lazy(inputNum - 1);
   }
 }

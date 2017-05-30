@@ -24,6 +24,17 @@ task sequencehelp {
 mainClassName = "exercise3.TriCater"
 
 run {
-	systemProperties System.getProperties()
-	args System.getProperty("args").split()
+	try {
+		systemProperties System.getProperties()
+		args System.getProperty("args").split()
+	} catch(Exception e) {
+		//Do nothing
+	}
+	
+}
+
+test {
+    testLogging {
+        events "passed", "skipped", "failed", "standardOut", "standardError"
+    }
 }

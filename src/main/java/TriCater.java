@@ -1,3 +1,5 @@
+package exercise3;
+
 public class TriCater
 {
   public static void main(String[] args)

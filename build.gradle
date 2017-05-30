@@ -7,3 +7,15 @@ repositories {
 dependencies {
 	testCompile 'junit:junit:4.12'
 }
+
+task sequencehelp << {
+	println "Integer sequence project"
+	println "This project has two options, Tri or Lazy"
+	println "\tTri will calculate the additive version of the factorial"
+	println "\tExample: Tri(5) = 5 + 4 + 3 + 2 + 1"
+	println "\tLazy will calculate the desired number in the lazy caterer problem"
+	println "\tExample: Lazy(5) = (5^2 + 5 + 2) / 2 = 16"
+	println "Arguments should be passed as follows:"
+	println "\tArgument 1: Tri or Lazy -- Choose which of the two methods you would like to calculate"
+	println "\tArgument 2: Number of sequence -- the positive integer number you would like to pass to the selected option"
+}
